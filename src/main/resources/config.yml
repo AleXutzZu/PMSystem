@@ -1,0 +1,62 @@
+#
+# $prefix - player prefix
+# $player - the player that sent the message or receives it
+# $message
+# $state - the state of some setting
+# $pluginPrefix - use the prefix in a message
+
+format:
+  sender: '&6To $prefix &r$player &7: $message'
+  receiver: '&6From $prefix &r$player &7: $message'
+messages:
+  prefix: '&8[&6&lPMSystem&8]'
+  error_no_one_to_reply_to: $pluginPrefix &cNo one has messaged you recently!
+  error_not_player: $pluginPrefix &cThis command can only be performed in game!
+  error_no_player_specified: $pluginPrefix &cYou did not specify a player!
+  error_player_not_found: $pluginPrefix &cThis player could not be found!
+  error_no_message: $pluginPrefix &cYou did not say a message!
+  error_is_ignored: $pluginPrefix &cThis player has added you to their ignore list!
+  error_cannot_ignore: $pluginPrefix &cYou may not ignore Staff Members!
+menu:
+  title: '&6Settings'
+  sound:
+    item:
+      material: note_block
+      damage: 0
+      display_name: '&6&lReply Sound'
+      lore:
+        - '&7Toggles whether or not'
+        - '&7you hear a sound whenever someone'
+        - '&7sends you a message.'
+        - ' '
+        - '&7Currently: $state'
+    enabled: '&aenabled'
+    disabled: '&cdisabled'
+  receive_pm:
+    item: writable_book
+    title: Accept PMs
+    description:
+      - '&7Toggles whether or not other'
+      - '&7people can message you. Keep in mind'
+      - '&7That certain staff may still message you'
+      - '&7even if this is turned off.'
+      - ' '
+      - '&7Currently: $state'
+    enabled: '&aEveryone'
+    disabled: '&cStaff Only'
+ignoring:
+  add: '$pluginPrefix &aSuccessfully ignored $player. They can no longer message
+    you.'
+  remove: '$pluginPrefix &aSuccessfully unignored $player. They may message you
+    again.'
+bypass:
+  enabled: true
+  permission: pmsystem.staffBypass
+  USAGE:
+    - '&8&m-----------&7[ &6&lPMSystem &7]&8&m-----------'
+    - "&c\xe2\u20ac\xa2 &6/msg <player> <message> &8- &7Send a private message"
+    - "&c\xe2\u20ac\xa2 &6/r <message> &8- &7Reply to a player"
+    - "&c\xe2\u20ac\xa2 &6/ignore <player> &8- &7Ignore a player"
+    - "&c\xe2\u20ac\xa2 &6/settings &8- &7Open settings menu"
+sound:
+  pm_sound: ORB_PICKUP
