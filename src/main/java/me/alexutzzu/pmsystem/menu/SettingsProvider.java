@@ -1,13 +1,10 @@
 package me.alexutzzu.pmsystem.menu;
 
-import fr.minuskube.inv.ClickableItem;
 import fr.minuskube.inv.content.InventoryContents;
 import fr.minuskube.inv.content.InventoryProvider;
 import me.alexutzzu.pmsystem.util.Storage;
-import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 
 public class SettingsProvider implements InventoryProvider {
     private final FileConfiguration configuration;
